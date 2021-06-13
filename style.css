@@ -1,104 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
 *{
-    margin: 0px;
     padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+body {
+font-family: "Lato", sans-serif;
 }
 
-video::-webkit-media-controls-enclosure {
-    display:none !important;
-}
-video::-webkit-media-controls {
-    display:none !important;
-}
-::-webkit-media-controls {
-    display:none !important;
-}
-
-.controls{
-    background-color: rgba(0, 0, 0, 0.603);
+#items {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(42, 42, 42);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    }
+    
+    #items a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #ffffff;
+    display: block;
+    transition: 0.3s;
+    }
+    
+    #items a:hover {
+    color: #f1f1f1;
+    }
+    
+    #items .closebtn {
     position: absolute;
-    bottom: 0px;
-    transform: translateY(100%);
-    z-index: 2147483647 !important;
-    padding-bottom: 6px;
-    width: 100%;
-    height: max-content;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    }
+
+.sidebar {
+height: 100%;
+width: 0;
+position: fixed;
+z-index: 1;
+top: 0;
+left: 0;
+background-color: #111;
+overflow-x: hidden;
+transition: 0.5s;
+padding-top: 60px;
 }
-.column{
+
+.sidebar a {
+padding: 8px 8px 8px 32px;
+text-decoration: none;
+font-size: 25px;
+color: #818181;
+display: block;
+transition: 0.3s;
+}
+
+.sidebar a:hover {
+color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+position: absolute;
+top: 0;
+right: 25px;
+font-size: 36px;
+margin-left: 50px;
+}
+
+.bar{
+    width: 100%;
+    background-color: lightcoral;
+    padding: 15px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
 }
-.video-bar{
-    background-color: rgb(255, 255, 255);
-    height: 7px;
-    margin-bottom: 13px;
+.openbtn{
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    transition: 0.6s;
+    cursor: pointer;
+    color: white;
+    font-family: 'Poppins', sans-serif;
 }
-.video-juice{
-    background-color: rgb(255, 123, 0);
-    width: 0%;
-    height: 100%;
+.openbtn i{
+    margin-right: 5px;
 }
-body{
-    background-color: rgb(31, 31, 31);
+.openbtn:hover{
+    color: rgb(0, 0, 0);
+}
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+.sidebar {padding-top: 15px;}
+.sidebar a {font-size: 18px;}
+}
+.savebtn{
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    background-color: transparent;
+    color: white;
+    transition: 0.6s;
+    border: 2px solid white;
+    cursor: pointer;
+}
+.savebtn:hover{
+    background-color: white;
+    color: black;
+}
+.row{
     display: flex;
-    width: 100vw;
-    height: 100vh;
+    justify-content: space-between;
+    width: 83%;
+    margin: 30px 0px;
+    margin-left: 20px;
+}
+.row-item{
+    box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    display: flex;
+    width: 70%;
+    margin: 20px 10px;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    overflow: hidden;
+    border: none;
+    background-color: transparent;
+    padding: 30px 40px;
 }
-.first-part{
-    margin: 0px 10px;
+.row-item p{
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 20px;
+}
+.row-item i{
+    color: white;
+    font-size: 30px;
+}
+.output{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+input{
+    padding: 10px 0px;
+    font-family: 'Poppins', sans-serif;
+    width: 80%;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-radius: 10px;
+    margin-left: 30px;
+    border: none;
+}
+input:focus{
+    outline: none;
+}
+select{
+    padding: 10px 0px;
+    font-family: 'Poppins', sans-serif;
+    width: 80%;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-radius: 10px;
+    margin-left: 30px;
+    border: none;
+}
+select:focus{
+    outline: none;
+}
+.check{
+    width: initial;
+    margin-top: 10px;
+}
+#mySidebar p{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    margin-left: 30px;
+}
+#imagesidebar p{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    margin-left: 30px;
+}
+#button p{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    margin-left: 30px;
+}
+.check-div{
     display: flex;
     align-items: center;
 }
-.video-player{
-    position: relative;
-    overflow: hidden;
-    max-width: 800px;
-    width: 100%;
+.delete{
+    margin-left: 30px;
+    padding: 10px 20px;
+    font-family: 'Poppins', sans-serif;
+    width: 80%;
+    background-color: white;
+    border-radius: 10px;
 }
-
-.video-player:hover > .controls{
-    transform: translateY(0%);
-    transition: all 0.6s;
-}
-
-.vid:hover{
-    transform: translateY(0%);
-    transition: all 0.6s;
-}
-
-.video-player .vid{
-    height: 100%;
-    width: 100%;
-}
-.play-pause{
+.button{
+    padding: 15px 60px;
+    background-color: orange;
+    color: white;
     border: none;
-    background-color: transparent;
-}
-.play-pause i{
-    font-size: 13px;
-    color: white;
-    padding: 5px;
-}
-.play-pause:hover{
-    color: black;
-    transition: all 0.6s;
-    cursor: pointer;
-}
-.vol{
+    font-family: 'Poppins', sans-serif;
+    border-radius: 20px;
     font-size: 18px;
-    color: white;
-    margin: 0px;
-    margin-left: 20px;
-    margin-right: 10px;
+    width: max-content;
 }
-i{
-    cursor: pointer;
-    color: white;
+h1{
+    font-size: 30px;
 }
-.fullscreen{
-    margin: 0px 20px;
+.product-item{
+    transition: 0.6s;
+    margin: 20px 0px;
+}
+.product-item:hover{
+    box-shadow: 0 0 10px 0 rgb(0,0,0,0.400);
+}
+.img{
+    width: 90%;
+    height: 50vh;
+    object-fit: cover;
+}
+.products-title{
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
 }

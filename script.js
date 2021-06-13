@@ -1,123 +1,166 @@
-var play = document.querySelector(".fa-play");
-var video = document.querySelector(".vid");
-var bar = document.querySelector(".video-juice");
-var sound = document.querySelector(".fa-volume-up");
-var soundbar = document.querySelector("#vol-control");
-var fullscreen = document.querySelector(".fullscreen");
-var vplay = document.querySelector(".video-player");
-
- video.onclick = () => {
-    if(video.paused){
-        play.classList.remove("fa-play");
-        play.classList.add("fa-pause");
-        video.play();
-    }
-    else{
-        play.classList.remove("fa-pause");
-        play.classList.add("fa-play");
-        video.pause();
-    }
- }
-
-play.onclick = () => {
-    if(video.paused){
-        play.classList.remove("fa-play");
-        play.classList.add("fa-pause");
-        video.play();
-    }
-    else{
-        play.classList.remove("fa-pause");
-        play.classList.add("fa-play");
-        video.pause();
-    }
-}
-
-video.addEventListener('timeupdate', function (e) {
-    var juicepos = video.currentTime / video.duration;
-    bar.style.width = juicepos * 100 + "%";
-    if(video.ended){
-        console.log("Ended")
-        play.classList.remove("fa-pause");
-        play.classList.add("fa-play");
-        video.pause();
-    }
-});
-
-window.addEventListener("keydown", checkKeyPress, false);
- 
-function checkKeyPress(key) {
- if (key.keyCode == "32") {
- 
-    if(video.paused){
-        play.classList.remove("fa-play");
-        play.classList.add("fa-pause");
-        video.play();
-    }
-    else{
-        play.classList.remove("fa-pause");
-        play.classList.add("fa-play");
-        video.pause();
-    }
-
- }
- else if(key.keyCode == "77"){
-
-    if(video.volume != 0){
-        sound.classList.add("fa-volume-mute");
-        sound.classList.remove("fa-volume-up");
-        video.volume = 0;
-        console.log(video.volume);
-        soundbar.value = "0";
-    }
-    else{
-        sound.classList.add("fa-volume-up");
-        sound.classList.remove("fa-volume-mute");
-        video.volume = 1;
-        console.log(video.volume);
-        soundbar.value = "100";
-    }
-
- }
-
-}
-
-function SetVolume(val)
-{
-    video.volume = val / 100;
-
-}
-
-var isFullScreen = function() {
-    return !!(vplay.fullscreen || vplay.webkitIsFullScreen || vplay.mozFullScreen || vplay.msFullscreenElement || vplay.fullscreenElement);
-}
-
-fullscreen.onclick = () => {
-    if(isFullScreen){
-        if(vplay.requestFullScreen){
-            vplay.requestFullScreen();
-        } else if(vplay.webkitRequestFullScreen){
-            vplay.webkitRequestFullScreen();
-        } else if(vid.mozRequestFullScreen){
-            vplay.mozRequestFullScreen();
+function insertitem(item){
+    if(item == "heading"){
+        var h1 = document.createElement("h1");
+        h1.innerHTML = "Heading"
+        document.querySelector(".output").appendChild(h1);
+        closeNav2();
+        h1.onclick = () =>{
+            if(document.querySelectorAll(".active") != null){
+                var previous = document.querySelectorAll(".active");
+                previous.forEach(item => {
+                    item.classList.remove("active");
+                })
+            }
+            h1.classList.add("active");
+            openNav();
         }
     }
-    
-}
-sound.onclick = () => {
-
-    if(video.volume != 0){
-        sound.classList.add("fa-volume-mute");
-        sound.classList.remove("fa-volume-up");
-        video.volume = 0;
-        console.log(video.volume);
-        soundbar.value = "0";
+    else if(item == "para"){
+        var h1 = document.createElement("p");
+        h1.innerHTML = "Paragraph"
+        closeNav2();
+        document.querySelector(".output").appendChild(h1);
+        h1.onclick = () =>{
+            if(document.querySelectorAll(".active") != null){
+                var previous = document.querySelectorAll(".active");
+                previous.forEach(item => {
+                    item.classList.remove("active");
+                })
+                h1.classList.add("active");
+                openNav();
+            }
+        }
     }
-    else{
-        sound.classList.add("fa-volume-up");
-        sound.classList.remove("fa-volume-mute");
-        video.volume = 1;
-        console.log(video.volume);
-        soundbar.value = "100";
+    else if(item == "heroright"){
+        var hero = document.querySelector('.hero-right');
+        document.querySelector(".output").appendChild(hero);
+        hero.style.display = "block"
     }
-
+    else if(item == "product"){
+        var hero = document.querySelector('.product');
+        document.querySelector(".output").appendChild(hero);
+        hero.style.display = "block"
+    }
+    else if(item == "heroleft"){
+        var hero = document.querySelector('.hero-left');
+        document.querySelector(".output").appendChild(hero);
+        hero.style.display = "block"
+    }
+    else if(item == "contact"){
+        var hero = document.querySelector('.contact');
+        document.querySelector(".output").appendChild(hero);
+        hero.style.display = "block"
+    }
+    else if(item == "promotion"){
+        var hero = document.querySelector('.promotion');
+        document.querySelector(".output").appendChild(hero);
+        hero.style.display = "block"
+    }
+    else if(item == "gallery"){
+        var hero = document.querySelector('.gallery');
+        document.querySelector(".output").appendChild(hero);
+        hero.style.display = "block"
+    }
 }
+
+function changeAlign(){
+    document.querySelector(".active").style.textAlign = document.querySelector(".align").value;
+}
+
+function changeSize(){
+    document.querySelector(".active").style.fontSize = document.querySelector(".size").value + "px";
+}
+
+function changeColor(){
+    document.querySelector(".active").style.color = document.querySelector(".color").value;
+}
+
+function marginTop(){
+    document.querySelector(".active").style.marginTop = document.querySelector(".mtop").value + "px";
+}
+
+function marginBottom(){
+    document.querySelector(".active").style.marginBottom = document.querySelector(".mbottom").value + "px";
+}
+
+function marginRight(){
+    document.querySelector(".active").style.marginRight = document.querySelector(".mright").value + "px";
+}
+
+function marginLeft(){
+    document.querySelector(".active").style.marginLeft = document.querySelector(".mleft").value + "px";
+}
+function changeText(){
+    document.querySelector(".active").innerHTML = document.querySelector(".text").value;
+}
+function background(){
+    document.querySelector(".active").style.backgroundColor = document.querySelector(".bg").value;
+}
+function changeFont(){
+    if( document.querySelector(".font").value == "Poppins"){
+        var font = "'Poppins', sans-serif";
+        document.querySelector(".active").style.fontFamily = font;
+    }
+    else if( document.querySelector(".font").value == "Montserrat"){
+        var font = "'Montserrat', sans-serif";
+        document.querySelector(".active").style.fontFamily = font;
+    }
+    else if( document.querySelector(".font").value == "Roboto2"){
+        var font = "'Roboto Condensed', sans-serif";
+        document.querySelector(".active").style.fontFamily = font;
+    }
+    else if( document.querySelector(".font").value == "Roboto"){
+        var font = "'Roboto', sans-serif";
+        document.querySelector(".active").style.fontFamily = font;
+    }
+}
+
+function changeBold(){
+    if(document.querySelector(".bold").checked){
+        document.querySelector(".active").style.fontWeight = "bold";
+    }
+    else if(!document.querySelector(".bold").checked){
+        document.querySelector(".active").style.fontWeight = "initial";
+    }
+}
+
+function changeItalic(){
+    if(document.querySelector(".italic").checked){
+        document.querySelector(".active").style.fontStyle = "italic";
+    }
+    else if(!document.querySelector(".italic").checked){
+        document.querySelector(".active").style.fontStyle = "initial";
+    }
+}
+function deleteel() {
+    document.querySelector(".active").remove();
+    closeNav();
+}
+
+if(document.querySelector(".active") == null){
+    document.querySelector(".prop").style.display = "none";
+}
+else{
+    document.querySelector(".prop").style.display = "block";
+}
+
+$(".item-to-active").click(function () {
+    if(document.querySelectorAll(".active") != null){
+        var previous = document.querySelectorAll(".active");
+        previous.forEach(item => {
+            item.classList.remove("active");
+        })
+    }
+    this.classList.add("active");
+    if(!document.querySelector(".active").classList.contains("image-em")){
+        openNav();
+    }
+})
+
+function changeSource() {
+    document.querySelector(".active").src = document.querySelector(".source").value;
+}
+
+$(".image-em").click(function () {
+    openImageNav();
+})

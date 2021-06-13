@@ -1,48 +1,501 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom Video Player</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    <div class="video-player">
 
-        <video src="./Pexels Videos 1851768.mp4" class="vid"></video>
+    <div class="hero">
 
-        <div class="controls">
-            
-            <div class="video-bar">
-                <div class="video-juice"></div>
+        <section class="text-gray-600 body-font hero-right" style="display: none;">
+            <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+            <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+                <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900 item-to-active">Before they sold out</h1>
+                <p class="mb-8 leading-relaxed item-to-active">Copper mug try-hard pitchfork pour-over freegan heirloom neutra air plant cold-pressed tacos poke beard tote bag. Heirloom echo park mlkshk tote bag selvage hot chicken authentic tumeric truffaut hexagon try-hard chambray.</p>
             </div>
-
-            <div class="column">
-
-                <div class="first-part">
-    
-                    <button class="play-pause"><i class="fas fa-play"></i></button>
-                    <i class="fas fa-volume-up vol"></i>
-                    <input id="vol-control" type="range" min="0" max="100" step="1" oninput="SetVolume(this.value)" onchange="SetVolume(this.value)"></input>
-                
-                </div>
-                <div class="second-part">
-    
-                    <i class="fas fa-expand fullscreen"></i>
-                
-                </div>
-
+            <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+                <img class="object-cover object-center rounded image-em img item-to-active image-em" alt="hero" src="https://dummyimage.com/720x600">
             </div>
+            </div>
+        </section>
+
+        <section class="text-gray-600 body-font hero-right" style="display: none;">
+            <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+            <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+                <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900 item-to-active">Before they sold out</h1>
+                <p class="mb-8 leading-relaxed item-to-active">Copper mug try-hard pitchfork pour-over freegan heirloom neutra air plant cold-pressed tacos poke beard tote bag. Heirloom echo park mlkshk tote bag selvage hot chicken authentic tumeric truffaut hexagon try-hard chambray.</p>
+            </div>
+            <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+                <img class="object-cover object-center rounded image-em img item-to-active" alt="hero" src="https://dummyimage.com/720x600">
+            </div>
+            </div>
+        </section>
+
+        <section class="text-gray-600 body-font hero-right" style="display: none;">
+            <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+            <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+                <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900 item-to-active">Before they sold out</h1>
+                <p class="mb-8 leading-relaxed item-to-active">Copper mug try-hard pitchfork pour-over freegan heirloom neutra air plant cold-pressed tacos poke beard tote bag. Heirloom echo park mlkshk tote bag selvage hot chicken authentic tumeric truffaut hexagon try-hard chambray.</p>
+            </div>
+            <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+                <img class="object-cover object-center rounded image-em img item-to-active" alt="hero" src="https://dummyimage.com/720x600">
+            </div>
+            </div>
+        </section>
+
+        <section class="text-gray-600 body-font hero-right" style="display: none;">
+            <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+            <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+                <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900 item-to-active">Before they sold out</h1>
+                <p class="mb-8 leading-relaxed item-to-active">Copper mug try-hard pitchfork pour-over freegan heirloom neutra air plant cold-pressed tacos poke beard tote bag. Heirloom echo park mlkshk tote bag selvage hot chicken authentic tumeric truffaut hexagon try-hard chambray.</p>
+            </div>
+            <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+                <img class="object-cover object-center rounded image-em img item-to-active" alt="hero" src="https://dummyimage.com/720x600">
+            </div>
+            </div>
+        </section>
+
+        <section class="text-gray-600 body-font hero-right" style="display: none;">
+            <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+            <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+                <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900 item-to-active">Before they sold out</h1>
+                <p class="mb-8 leading-relaxed item-to-active">Copper mug try-hard pitchfork pour-over freegan heirloom neutra air plant cold-pressed tacos poke beard tote bag. Heirloom echo park mlkshk tote bag selvage hot chicken authentic tumeric truffaut hexagon try-hard chambray.</p>
+            </div>
+            <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+                <img class="object-cover object-center rounded image-em img item-to-active" alt="hero" src="https://dummyimage.com/720x600">
+            </div>
+            </div>
+        </section>
+
+    </div>
+
+    <div class="products">
+        <section class="text-gray-600 body-font product" style="display: none;">
+            <h1 class="products-title item-to-active">Featured Products</h1>
+            <div class="container px-5 py-24 mx-auto">
+              <div class="flex flex-wrap -m-4">
+                <div class="lg:w-1/4 md:w-1/2 p-4 w-full product-item">
+                  <a class="block relative h-48 rounded overflow-hidden">
+                    <img alt="ecommerce" class="object-cover object-center w-full h-full block item-to-active image-em" src="https://dummyimage.com/420x260">
+                  </a>
+                  <div class="mt-4">
+                    <h2 class="text-gray-900 title-font text-lg font-medium item-to-active">The Catalyzer</h2>
+                    <p class="mt-1 item-to-active">$16.00</p>
+                  </div>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 p-4 w-full product-item">
+                  <a class="block relative h-48 rounded overflow-hidden">
+                    <img alt="ecommerce" class="object-cover object-center w-full h-full block item-to-active image-em" src="https://dummyimage.com/421x261">
+                  </a>
+                  <div class="mt-4">
+                    <h2 class="text-gray-900 title-font text-lg font-medium item-to-active">Shooting Stars</h2>
+                    <p class="mt-1 item-to-active">$21.15</p>
+                  </div>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 p-4 w-full product-item">
+                  <a class="block relative h-48 rounded overflow-hidden">
+                    <img alt="ecommerce" class="object-cover object-center w-full h-full block item-to-active image-em" src="https://dummyimage.com/422x262">
+                  </a>
+                  <div class="mt-4">
+                    <h2 class="text-gray-900 title-font text-lg font-medium item-to-active">Neptune</h2>
+                    <p class="mt-1 item-to-active">$12.00</p>
+                  </div>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 p-4 w-full product-item">
+                  <a class="block relative h-48 rounded overflow-hidden">
+                    <img alt="ecommerce" class="object-cover object-center w-full h-full block item-to-active image-em" src="https://dummyimage.com/423x263">
+                  </a>
+                  <div class="mt-4">
+                    <h2 class="text-gray-900 title-font text-lg font-medium item-to-active">The 400 Blows</h2>
+                    <p class="mt-1 item-to-active">$18.40</p>
+                  </div>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 p-4 w-full product-item">
+                  <a class="block relative h-48 rounded overflow-hidden">
+                    <img alt="ecommerce" class="object-cover object-center w-full h-full block item-to-active image-em" src="https://dummyimage.com/424x264">
+                  </a>
+                  <div class="mt-4">
+                    <h2 class="text-gray-900 title-font text-lg font-medium item-to-active">The Catalyzer</h2>
+                    <p class="mt-1 item-to-active">$16.00</p>
+                  </div>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 p-4 w-full product-item">
+                  <a class="block relative h-48 rounded overflow-hidden">
+                    <img alt="ecommerce" class="object-cover object-center w-full h-full block item-to-active image-em" src="https://dummyimage.com/425x265">
+                  </a>
+                  <div class="mt-4">
+                    <h2 class="text-gray-900 title-font text-lg font-medium item-to-active">Shooting Stars</h2>
+                    <p class="mt-1 item-to-active">$21.15</p>
+                  </div>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 p-4 w-full product-item">
+                  <a class="block relative h-48 rounded overflow-hidden">
+                    <img alt="ecommerce" class="object-cover object-center w-full h-full block item-to-active image-em" src="https://dummyimage.com/427x267">
+                  </a>
+                  <div class="mt-4">
+                    <h2 class="text-gray-900 title-font text-lg font-medium item-to-active">Neptune</h2>
+                    <p class="mt-1 item-to-active">$12.00</p>
+                  </div>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 p-4 w-full product-item">
+                  <a class="block relative h-48 rounded overflow-hidden">
+                    <img alt="ecommerce" class="object-cover object-center w-full h-full block item-to-active image-em" src="https://dummyimage.com/428x268">
+                  </a>
+                  <div class="mt-4">
+                    <h2 class="text-gray-900 title-font text-lg font-medium item-to-active">The 400 Blows</h2>
+                    <p class="mt-1 item-to-active">$18.40</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+    </div>
+
+    <div class="hero2">
+
+        <section class="text-gray-600 body-font hero-left" style="display: none;">
+            <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+              <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+                <img class="object-cover object-center rounded item-to-active image-em img" alt="hero" src="https://dummyimage.com/720x600">
+              </div>
+              <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+                <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900 item-to-active">Before they sold out</h1>
+                <p class="mb-8 leading-relaxed item-to-active">Copper mug try-hard pitchfork pour-over freegan heirloom neutra air plant cold-pressed tacos poke beard tote bag. Heirloom echo park mlkshk tote bag selvage hot chicken authentic tumeric truffaut hexagon try-hard chambray.</p>
+              </div>
+            </div>
+          </section> 
+
+          <section class="text-gray-600 body-font hero-left" style="display: none;">
+            <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+              <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+                <img class="object-cover object-center rounded image-em img" alt="hero" src="https://dummyimage.com/720x600">
+              </div>
+              <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+                <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900 item-to-active">Before they sold out</h1>
+                <p class="mb-8 leading-relaxed item-to-active">Copper mug try-hard pitchfork pour-over freegan heirloom neutra air plant cold-pressed tacos poke beard tote bag. Heirloom echo park mlkshk tote bag selvage hot chicken authentic tumeric truffaut hexagon try-hard chambray.</p>
+              </div>
+            </div>
+          </section> 
+
+          <section class="text-gray-600 body-font hero-left" style="display: none;">
+            <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+              <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+                <img class="object-cover object-center rounded image-em img" alt="hero" src="https://dummyimage.com/720x600">
+              </div>
+              <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+                <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900 item-to-active">Before they sold out</h1>
+                <p class="mb-8 leading-relaxed item-to-active">Copper mug try-hard pitchfork pour-over freegan heirloom neutra air plant cold-pressed tacos poke beard tote bag. Heirloom echo park mlkshk tote bag selvage hot chicken authentic tumeric truffaut hexagon try-hard chambray.</p>
+              </div>
+            </div>
+          </section> 
+
+          <section class="text-gray-600 body-font hero-left" style="display: none;">
+            <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+              <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+                <img class="object-cover object-center rounded image-em img" alt="hero" src="https://dummyimage.com/720x600">
+              </div>
+              <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+                <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900 item-to-active">Before they sold out</h1>
+                <p class="mb-8 leading-relaxed item-to-active">Copper mug try-hard pitchfork pour-over freegan heirloom neutra air plant cold-pressed tacos poke beard tote bag. Heirloom echo park mlkshk tote bag selvage hot chicken authentic tumeric truffaut hexagon try-hard chambray.</p>
+              </div>
+            </div>
+          </section> 
+
+          <section class="text-gray-600 body-font hero-left" style="display: none;">
+            <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+              <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+                <img class="object-cover object-center rounded image-em img" alt="hero" src="https://dummyimage.com/720x600">
+              </div>
+              <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+                <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900 item-to-active">Before they sold out</h1>
+                <p class="mb-8 leading-relaxed item-to-active">Copper mug try-hard pitchfork pour-over freegan heirloom neutra air plant cold-pressed tacos poke beard tote bag. Heirloom echo park mlkshk tote bag selvage hot chicken authentic tumeric truffaut hexagon try-hard chambray.</p>
+              </div>
+            </div>
+          </section> 
+
+    </div>
+
+    <div class="marketing">
+        <section class="text-gray-600 body-font promotion" style="display: none;">
+            <div class="container px-5 py-24 mx-auto flex items-center md:flex-row flex-col">
+              <div class="flex flex-col md:pr-10 md:mb-0 mb-6 pr-0 w-full md:w-auto md:text-left text-center">
+                <h2 class="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1 item-to-active">ROOF PARTY POLAROID</h2>
+                <h1 class="md:text-3xl text-2xl font-medium title-font text-gray-900 item-to-active">Master Cleanse Reliac Heirloom</h1>
+              </div>
+              <div class="flex md:ml-auto md:mr-0 mx-auto items-center flex-shrink-0 space-x-4">
+                <button class="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 512 512">
+                    <path d="M99.617 8.057a50.191 50.191 0 00-38.815-6.713l230.932 230.933 74.846-74.846L99.617 8.057zM32.139 20.116c-6.441 8.563-10.148 19.077-10.148 30.199v411.358c0 11.123 3.708 21.636 10.148 30.199l235.877-235.877L32.139 20.116zM464.261 212.087l-67.266-37.637-81.544 81.544 81.548 81.548 67.273-37.64c16.117-9.03 25.738-25.442 25.738-43.908s-9.621-34.877-25.749-43.907zM291.733 279.711L60.815 510.629c3.786.891 7.639 1.371 11.492 1.371a50.275 50.275 0 0027.31-8.07l266.965-149.372-74.849-74.847z"></path>
+                  </svg>
+                  <span class="ml-4 flex items-start flex-col leading-none">
+                    <span class="text-xs text-gray-600 mb-1 item-to-active">GET IT ON</span>
+                    <span class="title-font font-medium item-to-active">Google Play</span>
+                  </span>
+                </button>
+                <button class="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 305 305">
+                    <path d="M40.74 112.12c-25.79 44.74-9.4 112.65 19.12 153.82C74.09 286.52 88.5 305 108.24 305c.37 0 .74 0 1.13-.02 9.27-.37 15.97-3.23 22.45-5.99 7.27-3.1 14.8-6.3 26.6-6.3 11.22 0 18.39 3.1 25.31 6.1 6.83 2.95 13.87 6 24.26 5.81 22.23-.41 35.88-20.35 47.92-37.94a168.18 168.18 0 0021-43l.09-.28a2.5 2.5 0 00-1.33-3.06l-.18-.08c-3.92-1.6-38.26-16.84-38.62-58.36-.34-33.74 25.76-51.6 31-54.84l.24-.15a2.5 2.5 0 00.7-3.51c-18-26.37-45.62-30.34-56.73-30.82a50.04 50.04 0 00-4.95-.24c-13.06 0-25.56 4.93-35.61 8.9-6.94 2.73-12.93 5.09-17.06 5.09-4.64 0-10.67-2.4-17.65-5.16-9.33-3.7-19.9-7.9-31.1-7.9l-.79.01c-26.03.38-50.62 15.27-64.18 38.86z"></path>
+                    <path d="M212.1 0c-15.76.64-34.67 10.35-45.97 23.58-9.6 11.13-19 29.68-16.52 48.38a2.5 2.5 0 002.29 2.17c1.06.08 2.15.12 3.23.12 15.41 0 32.04-8.52 43.4-22.25 11.94-14.5 17.99-33.1 16.16-49.77A2.52 2.52 0 00212.1 0z"></path>
+                  </svg>
+                  <span class="ml-4 flex items-start flex-col leading-none">
+                    <span class="text-xs text-gray-600 mb-1 item-to-active">Download on the</span>
+                    <span class="title-font font-medium item-to-active">App Store</span>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </section>
+    </div>
+
+    <div>
+        <section class="text-gray-600 body-font gallery" style="display: none;">
+            <div class="container px-5 py-24 mx-auto flex flex-wrap">
+              <div class="flex flex-wrap md:-m-2 -m-1">
+                <div class="flex flex-wrap w-1/2">
+                  <div class="md:p-2 p-1 w-1/2">
+                    <img alt="gallery" class="w-full object-cover h-full object-center block item-to-active image-em" src="https://dummyimage.com/500x300">
+                  </div>
+                  <div class="md:p-2 p-1 w-1/2">
+                    <img alt="gallery" class="w-full object-cover h-full object-center block item-to-active image-em" src="https://dummyimage.com/501x301">
+                  </div>
+                  <div class="md:p-2 p-1 w-full">
+                    <img alt="gallery" class="w-full h-full object-cover object-center block" src="https://dummyimage.com/600x360">
+                  </div>
+                </div>
+                <div class="flex flex-wrap w-1/2">
+                  <div class="md:p-2 p-1 w-full">
+                    <img alt="gallery" class="w-full h-full object-cover object-center block item-to-active image-em" src="https://dummyimage.com/601x361">
+                  </div>
+                  <div class="md:p-2 p-1 w-1/2">
+                    <img alt="gallery" class="w-full object-cover h-full object-center block item-to-active image-em" src="https://dummyimage.com/502x302">
+                  </div>
+                  <div class="md:p-2 p-1 w-1/2">
+                    <img alt="gallery" class="w-full object-cover h-full object-center block item-to-active image-em" src="https://dummyimage.com/503x303">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+    </div>
+
+    <div class="">
+        <section class="text-gray-600 body-font relative contact" style="display: none;">
+            <div class="container px-5 py-24 mx-auto flex sm:flex-nowrap flex-wrap">
+              <div class="lg:w-2/3 md:w-1/2 bg-gray-300 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
+                <iframe width="100%" height="100%" class="absolute inset-0" frameborder="0" title="map" marginheight="0" marginwidth="0" scrolling="no" src="https://maps.google.com/maps?width=100%&height=600&hl=en&q=%C4%B0zmir+(My%20Business%20Name)&ie=UTF8&t=&z=14&iwloc=B&output=embed" style="filter: grayscale(1) contrast(1.2) opacity(0.4);"></iframe>
+                <div class="bg-white relative flex flex-wrap py-6 rounded shadow-md">
+                  <div class="lg:w-1/2 px-6">
+                    <h2 class="title-font font-semibold text-gray-900 tracking-widest text-xs item-to-active">ADDRESS</h2>
+                    <p class="mt-1 item-to-active">Photo booth tattooed prism, portland taiyaki hoodie neutra typewriter</p>
+                  </div>
+                  <div class="lg:w-1/2 px-6 mt-4 lg:mt-0" stye="width: max-content;">
+                    <h2 class="title-font font-semibold text-gray-900 tracking-widest text-xs item-to-active">EMAIL</h2>
+                    <a class="text-indigo-500 leading-relaxed item-to-active">example@email.com</a>
+                    <h2 class="title-font font-semibold text-gray-900 tracking-widest text-xs mt-4 item-to-active">PHONE</h2>
+                    <p class="leading-relaxed item-to-active">123-456-7890</p>
+                  </div>
+                </div>
+              </div>
+              <div class="lg:w-1/3 md:w-1/2 bg-white flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
+                <h2 class="text-gray-900 text-lg mb-1 font-medium title-font item-to-active">Contact</h2>
+                <p class="leading-relaxed mb-5 text-gray-600 item-to-active">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ab soluta tempore porro recusandae animi expedita voluptatem ut doloremque rem aliquid quisquam inventore debitis alias dolore, molestias at praesentium quidem.</p>
+              </div>
+            </div>
+          </section>
+    </div>
+
+    <div id="imagesidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeImageNav()">×</a>
+
+        <button class="delete" onclick="deleteel()">Delete Element</button>
+
+        <p>Margin Top</p>
+        <input type="text" class="mtop" onchange="marginTop()">
+
+        <p>Image Source</p>
+        <input type="text" class="source" onchange="changeSource()">
+
+        <p>Margin Bottom</p>
+        <input type="text" class="mbottom" onchange="marginBottom()">
+
+        <p>Margin Left</p>
+        <input type="text" class="mleft" onchange="marginLeft()">
+
+        <p>Margin Right</p>
+        <input type="text" class="mright" onchange="marginRight()">
+    </div>
+
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+
+        <button class="delete" onclick="deleteel()">Delete Element</button>
+
+        <p>Text</p>
+        <input type="text" class="text" onchange="changeText()">
+
+        <p>Text Align</p>
+        <input type="text" class="align" onchange="changeAlign()">
+
+        <p>Text Size</p>
+        <input type="text" class="size" onchange="changeSize()">
+
+        <p>Text Color</p>
+        <input type="text" class="color" onchange="changeColor()">
+
+        <p>Margin Top</p>
+        <input type="text" class="mtop" onchange="marginTop()">
+
+        <p>Margin Bottom</p>
+        <input type="text" class="mbottom" onchange="marginBottom()">
+
+        <p>Margin Left</p>
+        <input type="text" class="mleft" onchange="marginLeft()">
+
+        <p>Margin Right</p>
+        <input type="text" class="mright" onchange="marginRight()">
+
+        <p>Background Color</p>
+        <input type="text" class="bg" onchange="background()">
+
+        <p>Font Family</p>
+        <select class="font" onchange="changeFont()">
+            <option value="Select A Font">Select A Font</option>
+            <option value="Poppins">Poppins</option>
+            <option value="Roboto">Roboto</option>
+            <option value="Roboto2">Roboto Condensed</option>
+            <option value="Montserrat">Montserrat</option>
+        </select>
+
+        <div class="check-div">
+            <p>Bold</p>
+            <input type="checkbox" class="check bold" name="" id="" onchange="changeBold()">
+        </div>
+
+        <div class="check-div">
+            <p>Italic</p>
+            <input type="checkbox" class="check italic" name="" id="" onchange="changeItalic()">
+        </div>
+
+    </div>
+
+    <div id="items" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav2()">×</a>
+        <div class="row">
+            <button class="row-item head-insert" onclick="insertitem('heading')">
+                <i class="fas fa-heading"></i>
+                <p class="item-name">Heading</p>
+            </button>
+            <button class="row-item para-insert" onclick="insertitem('para')">
+                <i class="fas fa-paragraph"></i>
+                <p class="item-name">Paragraph</p>
+            </button>
+
+        </div>
+
+        <div class="row">
+
+            <button class="row-item hero1-insert" onclick="insertitem('heroright')">
+                <i class="fas fa-indent"></i>
+                <p class="item-name">Hero Right</p>
+            </button>
+
+            <button class="row-item banner-insert" onclick="insertitem('banner')">
+                <i class="fas fa-indent"></i>
+                <p class="item-name">Banner</p>
+            </button>
+
+        </div>
+
+        <div class="row">
+
+            <button class="row-item hero1-insert" onclick="insertitem('contact')">
+                <i class="fas fa-envelope"></i>
+                <p class="item-name">Contact</p>
+            </button>
+
+            <button class="row-item hero1-insert" onclick="insertitem('promotion')">
+                <i class="fas fa-play"></i>
+                <p class="item-name">Promotion</p>
+            </button>
+
+        </div>
+
+        <div class="row">
+
+            <button class="row-item hero1-insert" onclick="insertitem('gallery')">
+                <i class="fas fa-image"></i>
+                <p class="item-name">Gallery</p>
+            </button>
+
+        </div>
+
+
+
+        
+
+        <div class="row">
+
+            <button class="row-item hero1-insert" onclick="insertitem('heroleft')">
+                <i class="fas fa-indent"></i>
+                <p class="item-name">Hero Left</p>
+            </button>
 
             
+            <button class="row-item banner-insert" onclick="insertitem('product')">
+                <i class="fas fa-shopping-cart"></i>
+                <p class="item-name">Products</p>
+            </button>
 
         </div>
 
     </div>
 
-    <script src="./script.js"></script>
+    <div class="bar">
+        <button class="openbtn prop" onclick="openNav()"> <i class="fas fa-bars"></i> Properties</button>
+        <button class="openbtn" onclick="openNav2()"> <i class="fas fa-bars"></i> Items</button>
+        <button class="savebtn">Save Changes</button>
+    </div>
 
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "350px";
+            document.querySelector(".color").value = document.querySelector(".active").style.color;
+            document.querySelector(".mright").value = document.querySelector(".active").style.marginRight;
+            document.querySelector(".text").value = document.querySelector(".active").innerHTML;
+            document.querySelector(".mleft").value = document.querySelector(".active").style.marginLeft;
+            document.querySelector(".mbottom").value = document.querySelector(".active").style.marginBottom;
+            document.querySelector(".mtop").value = document.querySelector(".active").style.marginTop;
+            document.querySelector(".align").value = document.querySelector(".active").style.textAlign;
+        }
+        function openNav2() {
+            document.getElementById("items").style.width = "400px";
+        }
+        function openImageNav() {
+            document.getElementById("imagesidebar").style.width = "400px";
+        }
+        function openNav2() {
+            document.getElementById("items").style.width = "400px";
+        }
+        function closeNav2() {
+            document.getElementById("items").style.width = "0";
+        }
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+        }
+        function closeImageNav() {
+            document.getElementById("imagesidebar").style.width = "0";
+        }
+    </script>
+
+    <div class="output">
+
+    </div>
+
+    <script src="./script.js"></script>
+   
 </body>
-</html>
+</html> 
